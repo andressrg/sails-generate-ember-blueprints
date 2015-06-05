@@ -39,7 +39,7 @@ var Ember = {
 		sideload = sideload || false;
 		var plural = Array.isArray( records ) ? true : false;
 
-		var emberModelIdentity = _.camelCase( model.globalId );
+		var emberModelIdentity = model.camelName || _.camelCase( model.globalId );
 		var modelPlural = pluralize( emberModelIdentity );
 		var documentIdentifier = modelPlural; //plural ? modelPlural : emberModelIdentity;
 		var json = {};
